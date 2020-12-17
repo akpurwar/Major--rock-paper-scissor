@@ -1,0 +1,34 @@
+.line{
+ width: 30px;
+ background-color: black;
+ height: 2px;
+ animation: rot .5s infinite;
+}
+
+@keyframes rot{
+ 100%{ transform: rotate(360deg);}
+}
+
+.bird-container{
+  width: 700px;
+  height: 400px;
+  background-color: rgb(47, 166, 221);
+}
+.bird{
+  background-image: url('../../assets/pic/pic1.jpg');
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  animation: birdmove 3s infinite;
+}
+
+@keyframes birdmove{
+  0%{background-image: url('../../assets/pic/pic1.jpg');}
+  25%{background-image: url('../../assets/pic/pic2.png');}
+  50%{background-image: url('../../assets/pic/pic3.png');}
+  75%{background-image: url('../../assets/pic/pic4.png');}
+  100%{
+    background-image: url('../../assets/pic/pic5.png');
+    margin-left: 450px;
+  }
+}

@@ -1,0 +1,57 @@
+.container {
+  width: 100%;
+  height: 100%;
+  min-width: 400px;
+}
+
+.sidenav-content {
+  display: flex;
+  padding-top: 150px;
+  padding-left: 15px;
+}
+
+.toggleBtn {
+  left: 0px;
+  height: 40px;
+  top: 50px;
+  position: absolute;
+  z-index: 1;
+}
+
+.userMode {
+  display: flex;
+}
+
+.topScorers {
+  text-align: center;
+  width: 40%;
+  padding: 40px;
+  border-left: 2px solid black;
+}
+
+@media all and (max-width:600px) {
+  .topScorers {
+    display: none;
+  }
+
+  .userMode {
+    display: inline;
+  }
+}
+
+.sidenav {
+  padding: 20px;
+  background-color: darkkhaki;
+}
+
+.bubble{
+position: absolute;
+z-index: -3;
+background-color: gray;
+opacity: 60%;
+right: 0px;
+height: 90%;
+width: 900px;
+border-radius: 0px  0px  0px 1000px
+}
+

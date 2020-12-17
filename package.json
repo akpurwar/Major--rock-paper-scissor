@@ -1,0 +1,20 @@
+{
+  "name": "fet2020_majorproject_bestify-your-time_g5",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CDACFRTP-FET-SEP20/FET2020_MajorProject_Bestify-your-Time_G5.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CDACFRTP-FET-SEP20/FET2020_MajorProject_Bestify-your-Time_G5/issues"
+  },
+  "homepage": "https://github.com/CDACFRTP-FET-SEP20/FET2020_MajorProject_Bestify-your-Time_G5#readme",
+  "description": ""
+}

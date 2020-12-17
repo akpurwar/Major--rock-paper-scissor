@@ -1,0 +1,50 @@
+.newsSection {
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 5px 5px 5px black;
+  background: rgba(0, 151, 19, 0.6);
+  h2{
+    height: 60px;
+    box-shadow: 5px 5px 15px black;
+  }
+}
+
+.news {
+  list-style: none;
+}
+
+li {
+  margin: 5px;
+  padding: 10px;
+  border-radius: 30px;
+  transition: all .5s ease-in-out;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-style: italic;
+  font-weight: bolder;
+  a{
+    text-decoration: none;
+  }
+}
+
+li:hover {
+  background-color: rgba(0, 151, 19);
+  box-shadow: 5px 5px 5px black;
+}
+
+.live {
+  animation: livea .5s alternate infinite;
+}
+.live1{
+  animation: liveb .5s alternate infinite;
+}
+
+@keyframes livea {
+  100% {
+    padding-left: 50px;
+  }
+}
+@keyframes liveb {
+  100% {
+    padding-right: 50px;
+  }
+}

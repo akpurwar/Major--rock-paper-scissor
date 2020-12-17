@@ -1,0 +1,86 @@
+
+.navbar{
+    justify-content: space-between;
+}
+a{
+    padding-right: 1rem;
+    color: black;
+}
+a:hover{
+    color: black;
+}
+
+.mat-card-title, .mat-card-content{
+    color: black;
+}
+
+.mat-card{
+    background-color: cadetblue;
+}
+
+.mat-card-content{
+    font-size: large;
+    font-weight: 500;
+    font-family: Lucida Handwriting, Cursive;
+}
+.mat-toolbar{
+    background-color: cadetblue;
+}
+
+
+button{
+    margin-right: 1rem;
+}
+
+img{
+    // background-image: url("../../../assets/time3.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+    // height: 10%;
+}
+
+.container1{
+  position: relative;
+  text-align: center;
+//   color: whitesmoke;
+  font-family: "Trirong", serif;
+  font-size: 30px;
+//   text-shadow: 3px 3px 3px #ababab;
+}
+.font-italic{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 180%;
+    color: whitesmoke;
+    text-shadow: 3px 3px 3px lightgrey;
+}
+
+.quote{
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80%;
+    color: darkseagreen;
+    text-shadow: 0.5px 0.5px 0.5px goldenrod;
+    font-style: italic;
+}
+.btn1{
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: darkseagreen;
+  color: black;
+  font-size: 16px;
+  padding: 12px 32px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}

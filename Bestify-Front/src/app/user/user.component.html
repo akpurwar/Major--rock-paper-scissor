@@ -1,0 +1,29 @@
+<mat-drawer-container class="container" autosize>
+  <div class="bubble"></div>
+  <mat-drawer #drawer class="sidenav" mode="side">
+    <h2>Menu</h2>
+    <hr>
+    <mat-selection-list [multiple]="false">
+      <mat-list-option (click)='goToHome()' >Home</mat-list-option>
+      <mat-list-option (click)='goToGamesSection()' >Games</mat-list-option>
+      <mat-list-option (click)='goToBTQSection()'>Brain Teaser Quiz</mat-list-option>
+      <mat-list-option (click)='goToLTQSection()'>Logical Knowledge Quiz</mat-list-option>
+      <mat-list-option (click)='goToGKQSection()'>General Knowledge Quiz</mat-list-option>
+      <mat-list-option [routerLink]="['**']">Favourites</mat-list-option>
+      <mat-list-option [routerLink]="['**']">Results</mat-list-option>
+    </mat-selection-list>
+  </mat-drawer>
+  <div class="sidenav-content">
+    <button mat-raised-button color="primary" class="toggleBtn" type="button" (click)="drawer.toggle()">
+      >>>
+    </button>
+    <div class="userMode">
+      <router-outlet></router-outlet>
+      <div class="topScorers">
+        <h2>Top Scorers</h2>
+        <app-top-rankers></app-top-rankers>
+      </div>
+    </div>
+  </div>
+
+</mat-drawer-container>

@@ -1,0 +1,41 @@
+<mat-card>
+    <mat-card-content>
+        <div class="header">
+            <h2>Login</h2>
+        </div>
+        <form  [formGroup]="loginForm" (ngSubmit)="onLogin()">
+            <div class="padding-input">
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Email</mat-label>
+                <input type="email" formControlName="email" placeholder="damonSavator@gmail.com" matInput required>
+                </mat-form-field>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+            <div *ngIf="UserEmail.invalid &&(UserEmail.dirty || UserEmail.touched)">
+                <div *ngIf="UserEmail.errors?.required" class="errormsg">email is required</div>
+                <div *ngIf="UserEmail.errors?.email" class="errormsg">please enter valid email</div>
+            </div>
+            
+            <div class="padding-input" >
+               <mat-form-field class="full-width" appearance="outline">
+                <mat-label>password</mat-label>
+                 <input [type]="isHide?'password':'text'" formControlName="password" matInput required>
+                </mat-form-field>
+                <mat-icon (click)="toHideShow()">{{isHide?"visibility_off":"visibility"}}</mat-icon>
+            </div>
+            
+            <div *ngIf="UserPass.invalid &&(UserPass.dirty || UserPass.touched)">
+                <div  class="errormsg">password is required</div>
+            </div>
+            <div class="padding-input">
+            <button mat-raised-button color="warn" [disabled]='loginForm.invalid'>Submit</button>
+              
+             </div>
+        </form>
+        <br><br>
+        <div id="toleft">
+            <button color="warn" class="big-button" (click)="onClick()" mat-raised-button>forgotpassword</button>&nbsp;&nbsp;
+            <button color="warn" mat-raised-button>SignUp</button>
+        </div>
+    </mat-card-content>
+ </mat-card>

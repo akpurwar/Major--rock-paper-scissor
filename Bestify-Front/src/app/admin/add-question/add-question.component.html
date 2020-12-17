@@ -1,0 +1,123 @@
+<div id="main" class="jumbotron">
+    <!-- -->
+    <form [formGroup]="quizData" (ngSubmit)="validateQuizForm()">
+        <h2>Add Your Questions</h2>
+        <table class="table table-striped table-dark table-responsive">
+            <tr>
+                <td>Category:</td>
+                <td>
+                    <select id="category" name="category" formControlName="category" (change)="importset_no()">
+                        <option value="GK">General Knowledge</option>
+                        <option value="BT">Brain Teaser</option>
+                        <option value="LR">Logical Reasoning</option>
+                        <option value="GAME">GAME</option>
+                    </select>
+                    <span class="text-danger"
+                        *ngIf="registerFormControl && registerFormControl.category && (registerFormControl.category.touched || submitted) && registerFormControl.category.errors?.required">
+                        Please Mention Category of Question
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td>Set:</td>
+                <td>
+                    <select id="set_no" name="set_no" formControlName="setno"   (change)="importQuestionno()">
+                        <option value=""></option>
+                        <option *ngFor="let item of set_nos" value={{item.sets}} >{{item.sets}} </option>
+                    </select>
+                    <button type="button" (click)="AddNewSet()">AddNew</button>
+                    <input type="text" placeholder="Set_1" id="addNewSet">
+                    <span class="text-danger "
+                        *ngIf="registerFormControl && registerFormControl.setno && (registerFormControl.setno.touched || submitted) && registerFormControl.setno.errors?.required">
+                        Please Mention Set of Question
+                    </span>
+                    <span id="sp"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>QuestionNo:</td>
+                <td>
+                    <input type="number" formControlName="questionno" max="10" min="1">
+                    <span class="text-danger"
+                        *ngIf="registerFormControl && registerFormControl.questionno &&(registerFormControl.questionno.touched || submitted) && registerFormControl.questionno.errors?.required">
+                        Please Enter Your QuestionNo
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td>Question:</td>
+                <td>
+                    <input type="text" formControlName="question">
+                    <span class="text-danger"
+                        *ngIf="registerFormControl && registerFormControl.question &&(registerFormControl.question.touched || submitted) && registerFormControl.question.errors?.required">
+                        Please Enter Your Question
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td>Option 1:</td>
+                <td>
+                    <input type="text" formControlName="option1">
+                    <span class="text-danger"
+                        *ngIf="registerFormControl && registerFormControl.option1 &&(registerFormControl.option1.touched || submitted) && registerFormControl.option1.errors?.required">
+                        Please Enter First Option
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td>Option 2:</td>
+                <td>
+                    <input type="text" formControlName="option2">
+                    <span class="text-danger"
+                        *ngIf="registerFormControl && registerFormControl.option2 &&(registerFormControl.option2.touched || submitted) && registerFormControl.option2.errors?.required">
+                        Please Enter Second Option
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td>Option 3:</td>
+                <td>
+                    <input type="text" formControlName="option3">
+                    <span class="text-danger"
+                        *ngIf=" registerFormControl && registerFormControl.option3 && (registerFormControl.option3.touched || submitted) && registerFormControl.option3.errors?.required">
+                        Please Enter Third Option
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td>Option 4:</td>
+                <td>
+                    <input type="text" formControlName="option4">
+                    <span class="text-danger"
+                        *ngIf="registerFormControl && registerFormControl.option4 &&(registerFormControl.option4.touched || submitted) && registerFormControl.option4.errors?.required">
+                        Please Enter Forth Option
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td>Answer:</td>
+                <td>
+                    <input type="text" formControlName="answer"(input)="matchAnswer()">
+                    <span class="text-danger"
+                        *ngIf="registerFormControl && registerFormControl.answer &&((registerFormControl.answer.touched && !matched) || submitted )&& registerFormControl.answer.errors?.required && !matched ">
+                        Please Enter Your Answer.
+                    </span>
+                    <span class="text-success" *ngIf="matched">
+                        Your Answer is matched with option
+                    </span>
+                    <span class="text-danger" *ngIf="registerFormControl.answer.touched && !matched">
+                        Your Answer is not matched with any option
+                    </span> 
+                    
+                </td>
+            </tr>
+            <tr>
+                <td><button type="submit">Submit</button></td>
+                <td><button type="reset" value="reload" (click)=clear()>Clear</button></td>
+            </tr>
+        </table>
+        <span class="text-success" *ngIf="everythingfine">
+            Your Question is recorded.
+        </span>
+    </form>
+</div>

@@ -1,0 +1,18 @@
+<hr>
+<div class="newsSection">
+  <h2><label class="live1">--</label>Live News<label class="live">--</label></h2>
+  <ul class="news">
+    <li *ngFor="let n of news.articles | slice: startpage:paginationLimit">
+      <div>
+        {{n.title}}
+        <a [href]="n.url">--click to read more</a>
+      </div>
+    </li>
+  </ul>
+  <button mat-raised-button color="accent" *ngIf="paginationLimit < news.articles.length" (click)="showMoreItems()">
+    Show More
+  </button>
+  <button mat-raised-button color="accent" *ngIf="paginationLimit > 3" (click)="showLessItems()">
+    Show Less
+  </button>
+</div>

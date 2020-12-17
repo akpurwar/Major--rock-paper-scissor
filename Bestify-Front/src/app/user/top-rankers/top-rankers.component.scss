@@ -1,0 +1,16 @@
+mat-list-option {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.rotateDiv {
+  bottom: 100px;
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  animation: rot .5s infinite;
+}
+
+@keyframes rot{
+  100%{ transform: rotate(360deg);}
+}
